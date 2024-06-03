@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script depends on `functions' .
 # This is NOT a script for execution, but for loading functions, so NOT need execution permission.
 # NOTE that you NOT need to `cd ..' because the `$0' is NOT this file, but the script file which will source this file.
@@ -18,7 +18,7 @@ install-yay() {
   rm -rf /tmp/buildyay
 }
 
-install-ags() {
+install-ags (){
   x mkdir -p $base/cache/ags
   x cd $base/cache/ags
   try git init -b main
@@ -31,41 +31,41 @@ install-ags() {
   x cd $base
 }
 
-install-Rubik() {
+install-Rubik (){
   x mkdir -p $base/cache/Rubik
   x cd $base/cache/Rubik
   try git init -b main
   try git remote add origin https://github.com/googlefonts/rubik.git
   x git pull origin main && git submodule update --init --recursive
-  x sudo mkdir -p /usr/local/share/fonts/TTF/
-  x sudo cp fonts/variable/Rubik*.ttf /usr/local/share/fonts/TTF/
-  x sudo mkdir -p /usr/local/share/licenses/ttf-rubik/
-  x sudo cp OFL.txt /usr/local/share/licenses/ttf-rubik/LICENSE
+	x sudo mkdir -p /usr/local/share/fonts/TTF/
+	x sudo cp fonts/variable/Rubik*.ttf /usr/local/share/fonts/TTF/
+	x sudo mkdir -p /usr/local/share/licenses/ttf-rubik/
+	x sudo cp OFL.txt /usr/local/share/licenses/ttf-rubik/LICENSE
   x fc-cache -fv
   x gsettings set org.gnome.desktop.interface font-name 'Rubik 11'
   x cd $base
 }
 
-install-Gabarito() {
+install-Gabarito (){
   x mkdir -p $base/cache/Gabarito
   x cd $base/cache/Gabarito
   try git init -b main
   try git remote add origin https://github.com/naipefoundry/gabarito.git
   x git pull origin main && git submodule update --init --recursive
-  x sudo mkdir -p /usr/local/share/fonts/TTF/
-  x sudo cp fonts/ttf/Gabarito*.ttf /usr/local/share/fonts/TTF/
-  x sudo mkdir -p /usr/local/share/licenses/ttf-gabarito/
-  x sudo cp OFL.txt /usr/local/share/licenses/ttf-gabarito/LICENSE
+	x sudo mkdir -p /usr/local/share/fonts/TTF/
+	x sudo cp fonts/ttf/Gabarito*.ttf /usr/local/share/fonts/TTF/
+	x sudo mkdir -p /usr/local/share/licenses/ttf-gabarito/
+	x sudo cp OFL.txt /usr/local/share/licenses/ttf-gabarito/LICENSE
   x fc-cache -fv
   x cd $base
 }
 
-install-OneUI() {
+install-OneUI (){
   x mkdir -p $base/cache/OneUI4-Icons
   x cd $base/cache/OneUI4-Icons
   try git init -b main
   try git remote add origin https://github.com/end-4/OneUI4-Icons.git
-  # try git remote add origin https://github.com/mjkim0727/OneUI4-Icons.git
+# try git remote add origin https://github.com/mjkim0727/OneUI4-Icons.git
   x git pull origin main && git submodule update --init --recursive
   x sudo mkdir -p /usr/local/share/icons
   x sudo cp -r OneUI /usr/local/share/icons
@@ -74,7 +74,7 @@ install-OneUI() {
   x cd $base
 }
 
-install-bibata() {
+install-bibata (){
   x mkdir -p $base/cache/bibata-cursor
   x cd $base/cache/bibata-cursor
   name="Bibata-Modern-Classic"
@@ -87,7 +87,7 @@ install-bibata() {
   x cd $base
 }
 
-install-MicroTeX() {
+install-MicroTeX (){
   x mkdir -p $base/cache/MicroTeX
   x cd $base/cache/MicroTeX
   try git init -b master
@@ -97,7 +97,7 @@ install-MicroTeX() {
   x cd build
   x cmake ..
   x make -j32
-  x sudo mkdir -p /usr/local/bin
+	x sudo mkdir -p /usr/local/bin
   x sudo cp ./LaTeX /usr/local/bin/
   x sudo cp -r ./res /usr/local/bin/
   x cd $base
