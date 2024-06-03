@@ -5,7 +5,7 @@ if ! command -v pacman >/dev/null 2>&1; then
 fi
 prevent_sudo_or_root
 
-pacman -Syu --noconfirm --needed gum
+sudo pacman -Syu --noconfirm --needed gum
 
 startask() {
   echo -e "${BLUE}"
