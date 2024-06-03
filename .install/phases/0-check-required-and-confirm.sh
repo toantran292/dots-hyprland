@@ -16,7 +16,7 @@ startask() {
   if gum confirm "Please CONFIRM that you HAVE ALREADY BACKED UP \"$HOME/.config/\" and \"$HOME/.local/\" folders!"; then
     sleep 0
   else
-    echo "Received \"$p\", aborting..."
+    echo "Aborting..."
     exit 1
   fi
 
