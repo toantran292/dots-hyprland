@@ -86,5 +86,6 @@ v gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 sleep 1
 try hyprctl reload
 
+cp $base/.zshrc $HOME/.zshrc
 existed_zsh_conf=n
 grep -q 'source ~/.config/zshrc.d/dots-hyprland.zsh' ~/.zshrc && existed_zsh_conf=y
